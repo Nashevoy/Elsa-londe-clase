@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Asier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        #footer {
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .card-body:hover {
+            background-color: #f1f1f1;
+        }
+
+        .modal-header,
+        .modal-footer {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Portafolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#proyectos">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+            <form class="form-inline ml-3">
+                <input id="buscarProyecto" class="form-control mr-sm-2" type="search" placeholder="Buscar proyectos"
+                    aria-label="Buscar">
+            </form>
+        </div>
+    </nav>
+
+    <section id="inicio" class="container text-center" style="margin-top: 80px;">
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <picture>
+                <source srcset="" type="image/svg+xml">
+                <img src="Imagenes/Picture.png" class="img-fluid img-thumbnail" alt="..." width="150">
+              </picture>
+            <h1>Hola, soy Asier</h1>
+        </div>
+        <p>Soy Administrador de Sistemas y me apasionan los videojuegos. Estudié en CIP Cuatrovientos, y tengo
+            experiencia trabajando en distintos entornos de TI, gestionando redes, servidores y asegurando el correcto
+            funcionamiento de sistemas críticos.</p>
+    </section>
+
+    <section id="proyectos" class="container">
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <h2 class="text-center">Mis Proyectos</h2>
+        </div>
+        <div class="row" id="projectCards">
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Imagenes/Optimización de Redes Empresariales.jpg" class="card-img-top"
+                        alt="Optimización de Redes Empresariales">
+                    <div class="card-body">
+                        <h5 class="card-title">Optimización de Redes Empresariales</h5>
+                        <p class="card-text">Diseño y optimización de la red interna para una empresa mediana con 200
+                            empleados.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyecto1">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalProyecto1" tabindex="-1" role="dialog"
+                aria-labelledby="modalProyecto1Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalProyecto1Label">Optimización de Redes Empresariales</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Este proyecto consistió en analizar y mejorar el rendimiento de la red interna de una
+                            empresa. Se implementaron nuevas configuraciones de switches y routers, asegurando mayor
+                            velocidad, seguridad, y redundancia en el sistema de red para reducir el tiempo de
+                            inactividad.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Imagenes/Implementación de VLANs en Entorno Corporativo.jpg" class="card-img-top" alt="Implementación de VLANs">
+                    <div class="card-body">
+                        <h5 class="card-title">Implementación de VLANs en Entorno Corporativo</h5>
+                        <p class="card-text">Segmentación de la red para mejorar la seguridad y la eficiencia.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyecto2">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalProyecto2" tabindex="-1" role="dialog"
+                aria-labelledby="modalProyecto2Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalProyecto2Label">Implementación de VLANs en Entorno
+                                Corporativo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Este proyecto trató la implementación de VLANs para una empresa con múltiples departamentos.
+                            Se dividió la red física en redes virtuales independientes para mejorar la seguridad,
+                            reducir el tráfico no deseado y mejorar la eficiencia en la transmisión de datos.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Imagenes/Configuración de Servidores DNS.jpg" class="card-img-top"
+                        alt="Configuración de Servidores DNS">
+                    <div class="card-body">
+                        <h5 class="card-title">Configuración de Servidores DNS</h5>
+                        <p class="card-text">Implementación de servidores DNS internos para una infraestructura de red.
+                        </p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyecto3">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalProyecto3" tabindex="-1" role="dialog"
+                aria-labelledby="modalProyecto3Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalProyecto3Label">Configuración de Servidores DNS</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Configuración y despliegue de servidores DNS para gestionar la resolución de nombres dentro
+                            de una infraestructura de red local. Se configuraron tanto servidores primarios como
+                            secundarios para garantizar la disponibilidad y redundancia.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Imagenes/Implementación de Redes Inalámbricas Seguras.jpg" class="card-img-top"
+                        alt="Implementación de Redes Inalámbricas">
+                    <div class="card-body">
+                        <h5 class="card-title">Implementación de Redes Inalámbricas Seguras</h5>
+                        <p class="card-text">Diseño e instalación de redes Wi-Fi seguras en entornos corporativos.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyecto4">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalProyecto4" tabindex="-1" role="dialog"
+                aria-labelledby="modalProyecto4Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalProyecto4Label">Implementación de Redes Inalámbricas
+                                Seguras</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            En este proyecto se implementó una red inalámbrica segura en una empresa, utilizando
+                            tecnologías como WPA3 y control de acceso basado en autenticación 802.1X. Se garantizó el
+                            acceso controlado y seguro a los recursos internos de la empresa.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Imagenes/Monitorización de Redes con Zabbix.jpg" class="card-img-top"
+                        alt="Monitorización de Redes con Zabbix">
+                    <div class="card-body">
+                        <h5 class="card-title">Monitorización de Redes con Zabbix</h5>
+                        <p class="card-text">Implementación de una plataforma de monitorización de redes utilizando
+                            Zabbix.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyecto5">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalProyecto5" tabindex="-1" role="dialog"
+                aria-labelledby="modalProyecto5Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalProyecto5Label">Monitorización de Redes con Zabbix</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Este proyecto implementó una plataforma de monitorización en tiempo real utilizando Zabbix.
+                            El sistema permite detectar fallos, congestiones y comportamientos anómalos en la red, lo
+                            que facilita una respuesta proactiva a problemas antes de que afecten a los usuarios.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Imagenes/Configuración de Firewall Avanzado para Data Center.jpg" class="card-img-top"
+                        alt="Configuración de Firewall Avanzado">
+                    <div class="card-body">
+                        <h5 class="card-title">Configuración de Firewall Avanzado para Data Center</h5>
+                        <p class="card-text">Implementación y configuración de un firewall avanzado para proteger el
+                            tráfico de un Data Center.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyecto6">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalProyecto6" tabindex="-1" role="dialog"
+                aria-labelledby="modalProyecto6Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalProyecto6Label">Configuración de Firewall Avanzado para
+                                Data Center</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            En este proyecto se implementó y configuró un firewall avanzado para un centro de datos,
+                            utilizando políticas estrictas de control de tráfico. Se establecieron reglas de filtrado
+                            para proteger los servidores internos frente a amenazas externas y controlar el acceso a los
+                            recursos según la procedencia del tráfico.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="container">
+        <h2 class="text-center">Contacto</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3" placeholder="Tu mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2024 Asier | Administrador de Sistemas y Apasionado por los Videojuegos</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const nombre = document.getElementById('nombre').value;
+            if (email && nombre) {
+                alert('Gracias, ' + nombre + '. ¡Su mensaje ha sido enviado con éxito!');
+            }
+        });
+
+        document.getElementById('buscarProyecto').addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase();
+            const projects = document.querySelectorAll('#projectCards .card');
+            projects.forEach(function (card) {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
