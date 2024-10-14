@@ -1,2 +1,19 @@
-Este proyecto es un portafolio personal construido con HTML5, Bootstrap y JavaScript. La página muestra los proyectos de un Administrador de Sistemas, 
-proporcionando una navegación clara y responsiva. Se utilizan componentes de Bootstrap como cards, navbar, y modals.
+README PORTFOLIO
+2º ASIR | Asier Jiménez
+He desarrollado un portfolio web interactivo donde los usuarios pueden buscar y filtrar mis proyectos de forma rápida y sencilla. La página incluye información sobre mis intereses, certificaciones y más.
+
+Tecnologías Utilizadas:
+
+HTML: Para estructurar el contenido.
+CSS: Para el diseño y estilo básico.
+Bootstrap: Para garantizar un diseño responsive, utilizando componentes como el modal para mostrar detalles.
+jQuery: Para la interactividad, como el filtrado de proyectos y la validación del formulario.
+Entorno de Desarrollo:
+
+Visual Studio Code como editor.
+Google Chrome para pruebas.
+Estructura del Proyecto:
+
+index.html: Archivo principal con la búsqueda, tarjetas de proyectos y modal.
+paginajsportfolio.js: Controla la lógica de filtrado, sugerencias, validación de correo y la configuración del modal.
+images/: Carpeta con las imágenes del portfolio.
