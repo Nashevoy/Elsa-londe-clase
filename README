@@ -1,18 +1,21 @@
-README PORTFOLIO
+README Portfolio
 He desarrollado un portfolio web interactivo donde los usuarios pueden buscar y filtrar mis proyectos de forma rápida y sencilla. La página incluye información sobre mis intereses, certificaciones y más.
 
-Tecnologías Utilizadas:
-
-HTML: Para estructurar el contenido.
-CSS: Para el diseño y estilo básico.
-Bootstrap: Para garantizar un diseño responsive, utilizando componentes como el modal para mostrar detalles.
-jQuery: Para la interactividad, como el filtrado de proyectos y la validación del formulario.
-Entorno de Desarrollo:
-
+Tecnologías Utilizadas
+HTML: Estructura del contenido.
+CSS: Diseño y estilo básico.
+Bootstrap: Diseño responsive y modales para detalles de proyectos.
+jQuery: Interactividad como filtrado y validación de formularios.
+PHP y MySQL: Backend para gestión y almacenamiento de proyectos.
+Entorno de Desarrollo
 Visual Studio Code como editor.
 Google Chrome para pruebas.
-Estructura del Proyecto:
-
-index.html: Archivo principal con la búsqueda, tarjetas de proyectos y modal.
-paginajsportfolio.js: Controla la lógica de filtrado, sugerencias, validación de correo y la configuración del modal.
-images/: Carpeta con las imágenes del portfolio.
+Estructura del Proyecto
+index.html: Página principal con búsqueda, tarjetas de proyectos y modales.
+paginajsportfolio.js: Lógica de filtrado, validación y configuración de modales.
+images/: Carpeta de imágenes del portfolio.
+procesar_proyecto.php: Gestiona nuevos proyectos y la conexión a la base de datos.
+Funcionalidades Nuevas
+Carga de Nuevos Proyectos: Permite agregar proyectos directamente desde un formulario, incluyendo título, descripción, imagen y detalles.
+Subida de Imágenes: Permite la carga de una imagen para cada proyecto y su almacenamiento en la carpeta correspondiente.
+Base de Datos Dinámica: Los proyectos se guardan en una base de datos MySQL, desde donde se recuperan para mostrarlos en la página de forma dinámica.
