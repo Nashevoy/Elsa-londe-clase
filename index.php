@@ -1,18 +1,45 @@
 <?php
 // Conexión a la base de datos
-$conn = new mysqli(hostname: "localhost", username: "root", password: "", database: "portafolio");
+$conn = new mysqli("localhost", "root", "", "portafolio");
 
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+// Procesar el formulario de nuevo proyecto
+if (isset($_POST['submit'])) {
+    $titulo = $_POST['titulo'];
+    $descripcion = $_POST['descripcion'];
+    $detalles = $_POST['detalles'];
+
+    // Subida de la imagen
+    if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
+        $nombreImagen = basename($_FILES['imagen']['name']);
+        $rutaDestino = "Imagenes/" . $nombreImagen;
+
+        // Mover la imagen a la carpeta "Imagenes"
+        if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) {
+            // Insertar datos en la base de datos
+            $sql = "INSERT INTO proyectos (titulo, descripcion, imagen, detalles) VALUES (?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssss", $titulo, $descripcion, $nombreImagen, $detalles);
+
+            if ($stmt->execute()) {
+                echo "<script>alert('Proyecto añadido exitosamente');</script>";
+            } else {
+                echo "<script>alert('Error al añadir el proyecto');</script>";
+            }
+
+            $stmt->close();
+        } else {
+            echo "<script>alert('Error al subir la imagen');</script>";
+        }
+    } else {
+        echo "<script>alert('Error en la imagen. Asegúrate de haberla seleccionado');</script>";
+    }
 }
-
-// Consulta para obtener los proyectos
 $sql = "SELECT * FROM proyectos";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,12 +71,13 @@ $result = $conn->query($sql);
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">Portafolio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,7 +94,7 @@ $result = $conn->query($sql);
             </ul>
             <form class="form-inline ml-3">
                 <input id="buscarProyecto" class="form-control mr-sm-2" type="search" placeholder="Buscar proyectos"
-                       aria-label="Buscar">
+                    aria-label="Buscar">
             </form>
         </div>
     </nav>
@@ -118,7 +146,28 @@ $result = $conn->query($sql);
 
         </div>
     </section>
-
+    <section id="nuevo-proyecto" class="container">
+        <h2 class="text-center">Añadir Nuevo Proyecto</h2>
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" required>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen (sube un archivo)</label>
+                <input type="file" class="form-control-file" id="imagen" name="imagen" required>
+            </div>
+            <div class="form-group">
+                <label for="detalles">Detalles</label>
+                <textarea class="form-control" id="detalles" name="detalles" rows="3" required></textarea>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary">Añadir Proyecto</button>
+        </form>
+    </section>
     <section id="contacto" class="container">
         <h2 class="text-center">Contacto</h2>
         <form id="contactForm">
@@ -172,6 +221,7 @@ $result = $conn->query($sql);
     </script>
 
 </body>
+
 </html>
 
 <?php $conn->close(); ?>
